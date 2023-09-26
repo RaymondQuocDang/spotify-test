@@ -64,6 +64,7 @@ create_table = ''' CREATE TABLE IF NOT EXISTS newtbl(
     CONSTRAINT newtbl_username_key UNIQUE (username)); '''
 
 db_cursor.execute(create_table)
+db_connection.commit()
 db_cursor.close()
 db_connection.close()
 
@@ -594,7 +595,7 @@ def register():
 
     conn = get_db_connection()
     cur = conn.cursor()
-
+    
     try:
         cur.execute(
             'INSERT INTO "newtbl" (email, userName, password) VALUES (%s, %s, %s)',
