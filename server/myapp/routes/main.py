@@ -64,6 +64,8 @@ create_table = ''' CREATE TABLE IF NOT EXISTS public.newtbl(
     CONSTRAINT newtbl_username_key UNIQUE (username)); '''
 
 db_cursor.execute(create_table)
+db_cursor.close()
+db_connection.close()
 
 def get_auth_token():
     client_id = "ede4392a5dfa4b2a96e1a2333ae406ef"
@@ -595,7 +597,7 @@ def register():
 
     try:
         cur.execute(
-            "INSERT INTO NewTBL (email, userName, password) VALUES (%s, %s, %s)",
+            "INSERT INTO newtbl (email, userName, password) VALUES (%s, %s, %s)",
             (data["email"], data["userName"], hashed_password),
         )
         conn.commit()
@@ -619,7 +621,7 @@ def login():
 
     # Fetch the user with the given userName or email
     cur.execute(
-        "SELECT id, email, userName, password FROM NewTBL WHERE userName=%s OR email=%s",
+        "SELECT id, email, userName, password FROM newtbl WHERE userName=%s OR email=%s",
         (user_name_or_email, user_name_or_email),
     )
     user = cur.fetchone()
