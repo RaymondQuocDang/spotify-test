@@ -51,6 +51,20 @@ def get_db_connection():
     return conn
 
 
+db_connection = get_db_connection()
+db_cursor = db_connection.cursor()
+
+create_table = ''' CREATE TABLE IF NOT EXISTS public.newtbl(
+    id integer NOT NULL DEFAULT nextval('newtbl_id_seq'::regclass),
+    email character varying(120) COLLATE pg_catalog."default" NOT NULL,
+    userName character varying(80) COLLATE pg_catalog."default" NOT NULL,
+    password character varying(120) COLLATE pg_catalog."default" NOT NULL,
+    CONSTRAINT newtbl_pkey PRIMARY KEY (id),
+    CONSTRAINT newtbl_email_key UNIQUE (email),
+    CONSTRAINT newtbl_username_key UNIQUE (username)); '''
+
+db_cursor.execute(create_table)
+
 def get_auth_token():
     client_id = "ede4392a5dfa4b2a96e1a2333ae406ef"
     client_secret = "30880e79886848928681f17d1ac21f9e"
