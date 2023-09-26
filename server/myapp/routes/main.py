@@ -55,7 +55,7 @@ def get_db_connection():
 db_connection = get_db_connection()
 db_cursor = db_connection.cursor()
 
-create_table = ''' CREATE TABLE IF NOT EXISTS public.newtbl(
+create_table = ''' CREATE TABLE IF NOT EXISTS newtbl(
     id SERIAL PRIMARY KEY,
     email character varying(120) COLLATE pg_catalog."default" NOT NULL,
     userName character varying(80) COLLATE pg_catalog."default" NOT NULL,
