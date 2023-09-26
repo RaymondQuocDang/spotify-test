@@ -41,7 +41,7 @@ DATABASE_CONFIG = {
     "dbname": "spotify_test_db",
     "user": "spotify_test_db_user",
     "password": "ptLzwqiqGZmOLnLTX4m4XfWzdxtAnZUh",
-    "host": "dpg-ck9314g8s4nc73asr1tg-a.ohio-postgres.render.com",
+    "host": "dpg-ck9314g8s4nc73asr1tg-a",
     "port": "5432",
 }
 
