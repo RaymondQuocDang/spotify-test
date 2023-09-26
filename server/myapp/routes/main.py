@@ -29,8 +29,9 @@ def catch_all(path):
 
 
 app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get("DATABASE_URL")
-db = SQLAlchemy(app)
+# db = SQLAlchemy(app)
 app.config["SECRET_KEY"] = os.environ.get("SECRET_KEY")
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 logging.basicConfig(
     level=logging.DEBUG, format="%(asctime)s - %(levelname)s - %(message)s"
@@ -55,7 +56,7 @@ db_connection = get_db_connection()
 db_cursor = db_connection.cursor()
 
 create_table = ''' CREATE TABLE IF NOT EXISTS public.newtbl(
-    id integer NOT NULL DEFAULT nextval('newtbl_id_seq'::regclass),
+    id SERIAL PRIMARY KEY,
     email character varying(120) COLLATE pg_catalog."default" NOT NULL,
     userName character varying(80) COLLATE pg_catalog."default" NOT NULL,
     password character varying(120) COLLATE pg_catalog."default" NOT NULL,
