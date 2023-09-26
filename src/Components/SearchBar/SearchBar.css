@@ -1,0 +1,40 @@
+.containerStyle {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 22%;
+  height: 5%;
+  transform: translate(17rem, 1rem);
+  z-index: 4;
+  position: absolute;
+  border-radius: 25px;
+  background-color: #1f1f1f;
+  margin-left: 2%;
+}
+
+.selectStyle {
+  flex: 0 1 auto;
+  margin-right: 10px;
+  border-radius: 25px;
+  background-color: #1f1f1f;
+  color: #fff;
+  border: none;
+}
+
+.inputStyle {
+  flex: 1 1 auto;
+  margin-right: 10px;
+  border-radius: 25px;
+  background-color: #1f1f1f;
+  color: #fff;
+  border: none;
+}
+
+.buttonStyle {
+  flex: 0 1 auto;
+  border-radius: 25px;
+  background-color: #1f1f1f;
+  color: #fff;
+  border: none;
+  margin-right: 1%;
+}

@@ -1,0 +1,115 @@
+.image-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+@font-face {
+  font-family: SpotifyFont;
+  src: url(../../fonts/Gotham-Spotify-Font/Gotham-Light.otf);
+}
+
+.loadingCSS {
+  position: relative;
+  display: flex;
+  left: 80vh;
+  top: 50vh;
+}
+
+.background_color_gradient {
+  background: linear-gradient(to bottom, #1f1f1f, #121212);
+  position: relative;
+  z-index: 0;
+  height: 100vh;
+  width: 100%;
+  flex-grow: 1;
+}
+
+.word_layout {
+  margin-top: 7%;
+  margin-left: 3%;
+}
+
+.word_layout_genre {
+  font-family: "SpotifyFont";
+  color: white;
+}
+
+.card_layout_randomizer {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  height: 45%;
+  cursor: pointer;
+  position: relative;
+  top: 72px;
+}
+
+.Card {
+  background-color: #121212;
+}
+
+.card_layout_bgcolor {
+  background-color: #181818;
+}
+
+.card_img_genre {
+  margin: 5%;
+  width: 90%;
+}
+
+.card-body-layout {
+  position: relative;
+  display: flex;
+  top: 10rem;
+  text-align: center;
+  text-decoration: none;
+}
+
+.playbtn {
+  width: 100%;
+  position: relative;
+  left: 75%;
+  z-index: 0;
+}
+
+.text_alter {
+  color: white;
+}
+
+.image-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.base-image,
+.overlay-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: 0.3s ease-in-out;
+}
+
+.base-image.dimmed {
+  opacity: 0.5;
+}
+
+.overlay-image {
+  opacity: 0;
+  width: 50%;
+  height: 50%;
+  transition: all 0.3s ease-in-out;
+}
+
+.overlay-image .hover-image {
+  width: 50%;
+  height: 50%;
+}
+
+.card_layout_bgcolor:hover .overlay-image {
+  opacity: 1;
+  transform: translate(12rem, 8rem) translateY(-10px);
+}

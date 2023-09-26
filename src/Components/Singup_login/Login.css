@@ -1,0 +1,51 @@
+@font-face {
+  font-family: SpotifyFont;
+  src: url(../../fonts/Gotham-Spotify-Font/Gotham-Light.otf);
+}
+
+.login {
+  display: flex;
+  justify-content: flex-end;
+  background-color: #101010;
+  z-index: 2;
+  position: absolute;
+  width: 100%;
+  font-family: "SpotifyFont";
+}
+.loginBtns {
+  display: flex;
+  justify-content: space-between;
+  width: 12%;
+  margin-right: 5%;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.btn-black {
+  background-color: #000;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+.btn-black:hover {
+  background-color: #000;
+  color: #fff;
+  transform: scale(1.1);
+}
+
+.btn-white {
+  background-color: #fff;
+  color: #000;
+  transition: all 0.3s ease;
+}
+
+.btn-white:hover {
+  background-color: #fff;
+  color: #000;
+  transform: scale(1.1);
+}
+
+.modal-content {
+  background: linear-gradient(to bottom, #1f1f1f, #121212);
+  color: white;
+}
