@@ -16,9 +16,9 @@ from flask import send_from_directory
 app = Flask(__name__, static_folder="../../../build", static_url_path="")
 CORS(app)
 
-DATABASE_URL = os.environ.get("DATABASE_URL")
-DB_USER = os.environ.get("DATABASE_USER")
-DB_PASSWORD = os.environ.get("DATABASE_PASSWORD")
+# DATABASE_URL = os.environ.get("DATABASE_URL")
+# DB_USER = os.environ.get("DATABASE_USER")
+# DB_PASSWORD = os.environ.get("DATABASE_PASSWORD")
 
 
 @app.route("/", defaults={"path": ""})
@@ -28,9 +28,9 @@ def catch_all(path):
     return send_from_directory(app.static_folder, "index.html")
 
 
-app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get("DATABASE_URL")
+# app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get("DATABASE_URL")
 db = SQLAlchemy(app)
-app.config["SECRET_KEY"] = os.environ.get("SECRET_KEY")
+# app.config["SECRET_KEY"] = os.environ.get("SECRET_KEY")
 
 logging.basicConfig(
     level=logging.DEBUG, format="%(asctime)s - %(levelname)s - %(message)s"
@@ -562,13 +562,13 @@ def get_random_artists_info():
     return random_artist_track_info
 
 
-def connect_to_database():
-    try:
-        connection = psycopg2.connect(DATABASE_URL, user=DB_USER, password=DB_PASSWORD)
-        return connection
-    except Exception as e:
-        print(f"Error connecting to the database: {e}")
-        return None
+# def connect_to_database():
+#     try:
+#         connection = psycopg2.connect(DATABASE_URL, user=DB_USER, password=DB_PASSWORD)
+#         return connection
+#     except Exception as e:
+#         print(f"Error connecting to the database: {e}")
+#         return None
 
 
 @app.route("/register", methods=["POST"])
