@@ -16,9 +16,9 @@ from flask import send_from_directory
 app = Flask(__name__, static_folder="../../../build", static_url_path="")
 CORS(app)
 
-# DATABASE_URL = os.environ.get("DATABASE_URL")
-# DB_USER = os.environ.get("DATABASE_USER")
-# DB_PASSWORD = os.environ.get("DATABASE_PASSWORD")
+DATABASE_URL = os.environ.get("DATABASE_URL")
+DB_USER = os.environ.get("DATABASE_USER")
+DB_PASSWORD = os.environ.get("DATABASE_PASSWORD")
 
 
 @app.route("/", defaults={"path": ""})
@@ -28,9 +28,9 @@ def catch_all(path):
     return send_from_directory(app.static_folder, "index.html")
 
 
-# app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get("DATABASE_URL")
+app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get("DATABASE_URL")
 db = SQLAlchemy(app)
-# app.config["SECRET_KEY"] = os.environ.get("SECRET_KEY")
+app.config["SECRET_KEY"] = os.environ.get("SECRET_KEY")
 
 logging.basicConfig(
     level=logging.DEBUG, format="%(asctime)s - %(levelname)s - %(message)s"
